@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>骨骼肌：结构与功能 | 运动生理学课程</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-dna me-2"></i>运动生理学
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#intro">课程介绍</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            课程模块
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#module1">模块1：导言</a></li>
+                            <li><a class="dropdown-item" href="#module2">模块2：骨骼肌的基本结构</a></li>
+                            <li><a class="dropdown-item" href="#module3">模块3：神经肌肉连接</a></li>
+                            <li><a class="dropdown-item" href="#module4">模块4：肌肉收缩机制</a></li>
+                            <li><a class="dropdown-item" href="#module5">模块5：运动与肌肉疲劳</a></li>
+                            <li><a class="dropdown-item" href="#module6">模块6：肌纤维类型</a></li>
+                            <li><a class="dropdown-item" href="#module7">模块7：肌肉动作与力量调节</a></li>
+                            <li><a class="dropdown-item" href="#module8">模块8：应用与综合</a></li>
+                            <li><a class="dropdown-item" href="#module9">模块9：总结与评估</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#interactive">互动练习</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#multimedia">多媒体展示</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resources">学习资源</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-light" id="darkModeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="btn btn-outline-light ms-2" id="fontSizeIncrease">
+                        <i class="fas fa-text-height"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- 侧边栏 -->
+            <div class="col-lg-3 d-none d-lg-block sidebar">
+                <div class="sticky-top pt-4" style="top: 80px;">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">目录</h5>
+                        </div>
+                        <div class="card-body">
+                            <nav id="toc" class="nav flex-column">
+                                <a class="nav-link" href="#intro">课程介绍</a>
+                                <a class="nav-link" href="#module1">模块1：导言</a>
+                                <a class="nav-link" href="#module2">模块2：骨骼肌的基本结构</a>
+                                <a class="nav-link" href="#module3">模块3：神经肌肉连接</a>
+                                <a class="nav-link" href="#module4">模块4：肌肉收缩机制</a>
+                                <a class="nav-link" href="#module5">模块5：运动与肌肉疲劳</a>
+                                <a class="nav-link" href="#module6">模块6：肌纤维类型</a>
+                                <a class="nav-link" href="#module7">模块7：肌肉动作与力量调节</a>
+                                <a class="nav-link" href="#module8">模块8：应用与综合</a>
+                                <a class="nav-link" href="#module9">模块9：总结与评估</a>
+                                <a class="nav-link" href="#interactive">互动练习</a>
+                                <a class="nav-link" href="#multimedia">多媒体展示</a>
+                                <a class="nav-link" href="#resources">学习资源</a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="card mt-3">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">学习进度</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" id="progressBar">0%</div>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary" id="saveProgress">保存进度</button>
+                            <button class="btn btn-sm btn-outline-secondary" id="resetProgress">重置</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 主要内容 -->
+            <main class="col-lg-9 col-md-12 main-content">
+                <!-- 课程介绍 -->
+                <section id="intro" class="py-5">
+                    <div class="container">
+                        <h1 class="display-4 text-center mb-4">骨骼肌：结构与功能</h1>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="card shadow">
+                                    <div class="card-body">
+                                        <h2 class="card-title">课程概述</h2>
+                                        <p class="card-text">本课程基于《Exercise Physiology, 12E Theory an Application to Fitness and Performance》教材第8章内容，深入探讨骨骼肌的结构与功能。通过多模态、互动性的学习体验，帮助研究生学生全面理解骨骼肌在运动生理学中的重要性。</p>
+                                        <h3>学习目标</h3>
+                                        <ul>
+                                            <li>理解骨骼肌的微观结构及其组织层次</li>
+                                            <li>掌握神经肌肉连接和肌肉收缩的机制</li>
+                                            <li>区分不同类型的肌纤维及其功能特性</li>
+                                            <li>分析肌肉动作类型及力量产生的调节机制</li>
+                                            <li>应用骨骼肌知识解释运动表现和训练原理</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card shadow">
+                                    <div class="card-body text-center">
+                                        <div class="placeholder-image">
+                                            <i class="fas fa-dumbbell fa-5x text-primary mb-3"></i>
+                                            <p class="text-muted">骨骼肌系统示意图</p>
+                                        </div>
+                                        <button class="btn btn-primary mt-3" id="startCourse">开始学习</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 模块占位符 -->
+                <section id="module1" class="py-5 bg-light module-section">
+                    <div class="container">
+                        <h2 class="module-title">模块1：导言</h2>
+                        <div class="module-content">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h3>骨骼肌的重要性</h3>
+                                    <p>人体中有超过600块骨骼肌，占总体重的40%至50%。骨骼肌执行三项重要功能：</p>
+                                    <ol>
+                                        <li>产生运动和呼吸所需的力量</li>
+                                        <li>产生姿势支撑所需的力量</li>
+                                        <li>在寒冷环境中产生热量</li>
+                                    </ol>
+                                    <p>骨骼肌最明显的功能是使个体能够自由移动和呼吸。新的研究证据还表明，骨骼肌是内分泌器官，在调节人体多种器官系统中发挥重要作用。</p>
+                                    
+                                    <h3>骨骼肌与运动表现</h3>
+                                    <p>骨骼肌通过肌腱连接到骨骼上。肌肉的一端连接到不动的骨骼（起点），另一端连接到在肌肉收缩时移动的骨骼（止点）。根据所涉及的关节和肌肉类型，可以实现各种不同的运动。减小关节角度的肌肉称为屈肌，增大关节角度的肌肉称为伸肌。</p>
+                                    <p>鉴于骨骼肌在决定运动表现中的作用，对肌肉结构和功能的深入理解对运动科学家、体育教育工作者、物理治疗师和教练至关重要。</p>
+                                    
+                                    <div class="alert alert-primary" role="alert">
+                                        <h4>学习目标</h4>
+                                        <p>通过学习本章，您应该能够：</p>
+                                        <ul>
+                                            <li>绘制并标记骨骼肌纤维的微观结构</li>
+                                            <li>定义卫星细胞，解释卫星细胞在肌肉损伤修复中的作用</li>
+                                            <li>列出并解释肌肉收缩过程中发生的事件链</li>
+                                            <li>定义动态和静态运动，解释每种运动形式中发生的肌肉动作类型</li>
+                                            <li>描述决定肌肉收缩过程中产生力量大小的三个因素</li>
+                                            <li>比较和对比人体骨骼肌中三种主要肌纤维类型的生化和力学特性</li>
+                                            <li>描述骨骼肌纤维类型如何影响运动表现</li>
+                                            <li>绘制并描述肌肉收缩过程中运动速度与产生力量之间的关系</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-primary text-white">
+                                            <h4 class="mb-0">章节概览</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">骨骼肌结构</li>
+                                                <li class="list-group-item">神经肌肉连接</li>
+                                                <li class="list-group-item">肌肉收缩</li>
+                                                <li class="list-group-item">运动与肌肉疲劳</li>
+                                                <li class="list-group-item">运动相关的肌肉痉挛</li>
+                                                <li class="list-group-item">肌纤维类型</li>
+                                                <li class="list-group-item">肌肉动作</li>
+                                                <li class="list-group-item">肌肉中的力量调节</li>
+                                                <li class="list-group-item">力量-速度/功率-速度关系</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">思考问题</h4>
+                                            <p class="card-text">在继续学习之前，请思考以下问题：</p>
+                                            <ol>
+                                                <li>骨骼肌如何影响日常生活和运动表现？</li>
+                                                <li>为什么不同类型的运动员（如马拉松运动员和举重运动员）的肌肉表现出不同的特性？</li>
+                                                <li>肌肉疲劳的生理机制是什么？</li>
+                                            </ol>
+                                            <p class="card-text">这些问题将在本课程中得到解答。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <div class="interactive-element" id="muscle-overview-interactive">
+                                        <h4>人体主要骨骼肌系统</h4>
+                                        <p>下图展示了人体主要的骨骼肌群。点击不同区域可了解更多信息。</p>
+                                        <div class="text-center">
+                                            <img src="images/human_muscles.jpg" alt="人体骨骼肌系统" class="img-fluid rounded shadow" style="max-height: 500px;">
+                                        </div>
+                                        <div class="text-center mt-3">
+                                            <button class="btn btn-primary btn-sm module-nav-btn" data-target="module2">继续学习模块2：骨骼肌的基本结构 <i class="fas fa-arrow-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="module2" class="py-5 module-section">
+                    <div class="container">
+                        <h2 class="module-title">模块2：骨骼肌的基本结构</h2>
+                        <div class="module-content">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h3>骨骼肌的组织层次</h3>
+                                    <p>骨骼肌由多种组织组成，包括肌肉细胞（也称为肌纤维）、神经组织、血液和各种类型的结缔组织。各个肌肉之间由称为筋膜的结缔组织分隔并固定在适当位置。</p>
+                                    
+                                    <h4>结缔组织层次</h4>
+                                    <p>骨骼肌中存在三个独立的结缔组织层：</p>
+                                    <ul>
+                                        <li><strong>表膜（Epimysium）</strong>：包围整个肌肉的最外层</li>
+                                        <li><strong>束膜（Perimysium）</strong>：从表膜向内，包围肌纤维束的结缔组织</li>
+                                        <li><strong>肌内膜（Endomysium）</strong>：包围束内每个肌纤维的结缔组织</li>
+                                    </ul>
+                                    <p>在肌内膜下方，包围每个肌纤维的是另一层保护组织，称为基底层（也称为基底膜）。</p>
+                                    
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <h4 class="card-title">肌肉的组织层次结构</h4>
+                                            <ol>
+                                                <li>整个肌肉由<strong>表膜</strong>包围</li>
+                                                <li>肌肉内的肌纤维束（称为<strong>肌束</strong>）由<strong>束膜</strong>包围</li>
+                                                <li>每个肌纤维由<strong>肌内膜</strong>包围</li>
+                                                <li>肌纤维下方是<strong>基底层</strong>（基底膜）</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                    
+                                    <h3>肌纤维的微观结构</h3>
+                                    <p>尽管形状独特，肌纤维含有大多数其他细胞中存在的相同细胞器。它们含有线粒体、溶酶体等。然而，与身体中大多数其他细胞不同，肌肉细胞是多核的（即含有多个细胞核）。</p>
+                                    
+                                    <p>骨骼肌微观外观最显著的特征之一是其条纹状外观。这些条纹是由交替的明暗带产生的，暗带含有主要的肌肉收缩蛋白。</p>
+                                    
+                                    <h4>肌纤维的结构特点</h4>
+                                    <ul>
+                                        <li>每个肌纤维是一个细长的圆柱体，通常延伸整个肌肉的长度</li>
+                                        <li>包围肌纤维细胞的细胞膜称为<strong>肌浆膜（Sarcolemma）</strong></li>
+                                        <li>位于肌浆膜上方和基底层下方的是一组肌肉前体细胞，称为<strong>卫星细胞（Satellite cells）</strong></li>
+                                        <li>卫星细胞是未分化的细胞，在肌肉生长和修复中发挥关键作用</li>
+                                        <li>肌浆膜下方是<strong>肌浆（Sarcoplasm）</strong>，其中含有细胞蛋白质、细胞器和<strong>肌原纤维（Myofibrils）</strong></li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-primary text-white">
+                                            <h4 class="mb-0">关键术语</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <dl>
+                                                <dt>表膜（Epimysium）</dt>
+                                                <dd>包围整个肌肉的最外层结缔组织</dd>
+                                                
+                                                <dt>束膜（Perimysium）</dt>
+                                                <dd>包围肌纤维束的结缔组织</dd>
+                                                
+                                                <dt>肌内膜（Endomysium）</dt>
+                                                <dd>包围每个肌纤维的结缔组织</dd>
+                                                
+                                                <dt>肌浆膜（Sarcolemma）</dt>
+                                                <dd>包围肌纤维的细胞膜</dd>
+                                                
+                                                <dt>卫星细胞（Satellite cells）</dt>
+                                                <dd>位于肌浆膜上方的肌肉前体细胞，在肌肉修复和生长中起关键作用</dd>
+                                                
+                                                <dt>肌原纤维（Myofibrils）</dt>
+                                                <dd>肌纤维中含有收缩蛋白的线状结构</dd>
+                                                
+                                                <dt>肌节（Sarcomeres）</dt>
+                                                <dd>肌原纤维的基本功能单位</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">思考问题</h4>
+                                            <ol>
+                                                <li>卫星细胞如何影响肌肉的适应性和恢复能力？</li>
+                                                <li>结缔组织的三层结构如何影响肌肉的功能和力量传递？</li>
+                                                <li>肌核域的概念如何解释肌肉生长和萎缩过程？</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <h3>肌原纤维和肌节结构</h3>
+                                    <p>肌原纤维是含有收缩蛋白的线状结构。一般来说，肌原纤维由两种主要类型的蛋白质丝组成：</p>
+                                    <ol>
+                                        <li><strong>粗肌丝</strong>：由<strong>肌球蛋白（Myosin）</strong>蛋白组成</li>
+                                        <li><strong>细肌丝</strong>：主要由<strong>肌动蛋白（Actin）</strong>蛋白组成</li>
+                                    </ol>
+                                    <p>这两种蛋白质丝的排列赋予了骨骼肌其条纹状外观。肌动蛋白分子上还有两种额外的蛋白质：<strong>原肌球蛋白（Tropomyosin）</strong>和<strong>肌钙蛋白（Troponin）</strong>。这些蛋白质仅占肌肉的一小部分，但在收缩过程的调节中发挥重要作用。</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/muscle_structure.jpg" alt="骨骼肌结构层次" class="img-fluid rounded shadow" style="max-height: 400px;">
+                                                <p class="text-muted mt-2">图2.1：骨骼肌的结构层次，从整个肌肉到肌节水平</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <p>肌原纤维可以进一步细分为称为<strong>肌节（Sarcomeres）</strong>的单个片段。肌节之间由一层称为Z线或Z盘的结构蛋白分隔。肌球蛋白丝主要位于肌节的暗部分，称为A带，而肌动蛋白丝主要出现在肌节的亮区域，称为I带。在肌节中央是没有与肌动蛋白重叠的肌球蛋白丝部分，这是H区。</p>
+                                    
+                                    <h3>肌浆网和横管系统</h3>
+                                    <p>肌肉肌浆中有一个包围每个肌原纤维的膜性通道网络，称为<strong>肌浆网（Sarcoplasmic reticulum）</strong>。这些通道是钙（Ca<sup>2+</sup>）的储存位点，这一点很重要，因为肌浆网释放的钙是触发肌肉收缩所必需的。</p>
+                                    
+                                    <p>另一组称为<strong>横管（Transverse tubules）</strong>的膜性通道从肌浆膜延伸到肌纤维内部，并完全穿过纤维。这些横管在肌浆网的两个扩大部分之间通过，这些扩大部分称为<strong>终池（Terminal cisternae）</strong>。这两个膜系统（即横管和终池）的紧密位置在肌浆网储存的Ca<sup>2+</sup>的释放中起关键作用。</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/sarcomere_structure.jpg" alt="肌节结构" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                                <p class="text-muted mt-2">图2.2：肌节结构及其主要组成部分</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="interactive-element" id="muscle-structure-interactive">
+                                        <h4>骨骼肌结构交互图</h4>
+                                        <p>下图展示了骨骼肌的结构层次，从整个肌肉到肌节水平。使用滑块可以放大查看不同层次的结构。</p>
+                                        <div class="text-center">
+                                            <div class="mb-3">
+                                                <label for="structureLevel" class="form-label">结构层次：</label>
+                                                <input type="range" class="form-range" min="1" max="5" step="1" id="structureLevel" value="1">
+                                                <div class="d-flex justify-content-between">
+                                                    <span>整个肌肉</span>
+                                                    <span>肌束</span>
+                                                    <span>肌纤维</span>
+                                                    <span>肌原纤维</span>
+                                                    <span>肌节</span>
+                                                </div>
+                                            </div>
+                                            <img src="images/muscle_level1.png" alt="骨骼肌结构" id="structureImage" class="img-fluid rounded shadow" style="max-height: 450px;">
+                                        </div>
+                                        <div class="text-center mt-3">
+                                            <button class="btn btn-primary btn-sm module-nav-btn" data-target="module3">继续学习模块3：神经肌肉连接 <i class="fas fa-arrow-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 其他模块占位符 -->
+                <section id="module3" class="py-5 bg-light module-section">
+                    <div class="container">
+                        <h2 class="module-title">模块3：神经肌肉连接</h2>
+                        <div class="module-content">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h3>神经肌肉连接的结构</h3>
+                                    <p>神经肌肉连接（Neuromuscular Junction, NMJ）是运动神经元与骨骼肌纤维之间的特殊连接点。这种连接是神经系统控制肌肉收缩的关键接口。</p>
+                                    
+                                    <p>骨骼肌的收缩由称为<strong>运动神经元（Motor neurons）</strong>的特殊神经细胞控制。每个运动神经元及其支配的所有肌纤维统称为<strong>运动单位（Motor unit）</strong>。一个运动神经元可以支配少至几个或多至数百个肌纤维，这取决于肌肉的精细控制需求。</p>
+                                    
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <h4 class="card-title">运动单位的大小与功能</h4>
+                                            <p>运动单位的大小（即一个运动神经元支配的肌纤维数量）与肌肉的精细控制需求相关：</p>
+                                            <ul>
+                                                <li><strong>小型运动单位</strong>：支配少量肌纤维，用于需要精细控制的肌肉（如眼外肌、手指肌肉）</li>
+                                                <li><strong>大型运动单位</strong>：支配大量肌纤维，用于需要产生大力量但精细控制要求较低的肌肉（如腿部大肌群）</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/neuromuscular_junction.jpg" alt="神经肌肉连接结构" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                                <p class="text-muted mt-2">图3.1：神经肌肉连接的结构示意图</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h3>神经冲动传递机制</h3>
+                                    <p>当运动神经元被激活时，神经冲动（动作电位）沿着神经元的轴突传导，直到到达与肌纤维接触的末端。在这个接触点（神经肌肉接头），神经末梢释放一种称为<strong>乙酰胆碱（Acetylcholine）</strong>的神经递质。</p>
+                                    
+                                    <p>乙酰胆碱穿过神经肌肉接头的突触间隙，与肌纤维膜（肌浆膜）上的受体结合。这种结合导致肌浆膜上产生一种称为<strong>终板电位（End-plate potential, EPP）</strong>的电信号。如果终板电位足够强，它将触发肌纤维膜上的动作电位，进而启动肌肉收缩过程。</p>
+                                    
+                                    <h4>神经肌肉传递的步骤</h4>
+                                    <ol>
+                                        <li>运动神经元产生动作电位</li>
+                                        <li>动作电位沿轴突传导至神经末梢</li>
+                                        <li>神经末梢释放乙酰胆碱</li>
+                                        <li>乙酰胆碱与肌浆膜上的受体结合</li>
+                                        <li>产生终板电位</li>
+                                        <li>终板电位触发肌纤维膜上的动作电位</li>
+                                        <li>肌纤维膜的动作电位通过横管系统传入肌纤维内部</li>
+                                        <li>启动肌肉收缩过程</li>
+                                    </ol>
+                                    
+                                    <div class="alert alert-info" role="alert">
+                                        <h4>神经肌肉接头的特殊结构</h4>
+                                        <p>神经肌肉接头处，运动神经元的末端形成特殊的扩大结构，称为<strong>突触前终末</strong>。肌纤维膜在接头处也形成特殊的褶皱结构，增加表面积，称为<strong>突触后褶皱</strong>。这些特殊结构有助于提高神经冲动传递的效率。</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-primary text-white">
+                                            <h4 class="mb-0">关键术语</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <dl>
+                                                <dt>神经肌肉连接（NMJ）</dt>
+                                                <dd>运动神经元与骨骼肌纤维之间的特殊连接点</dd>
+                                                
+                                                <dt>运动神经元</dt>
+                                                <dd>控制骨骼肌收缩的特殊神经细胞</dd>
+                                                
+                                                <dt>运动单位</dt>
+                                                <dd>一个运动神经元及其支配的所有肌纤维</dd>
+                                                
+                                                <dt>乙酰胆碱</dt>
+                                                <dd>在神经肌肉接头处释放的神经递质</dd>
+                                                
+                                                <dt>终板电位（EPP）</dt>
+                                                <dd>乙酰胆碱与肌浆膜受体结合后产生的电信号</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">临床相关性</h4>
+                                            <p>神经肌肉连接的功能障碍可导致多种疾病：</p>
+                                            <ul>
+                                                <li><strong>重症肌无力</strong>：自身免疫性疾病，乙酰胆碱受体被抗体攻击</li>
+                                                <li><strong>肉毒杆菌毒素</strong>：阻断乙酰胆碱释放，导致肌肉麻痹</li>
+                                                <li><strong>兰伯特-伊顿综合征</strong>：影响钙通道，减少乙酰胆碱释放</li>
+                                            </ul>
+                                            <p>了解神经肌肉连接的结构和功能对理解这些疾病的机制和治疗方法至关重要。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <h3>肌肉收缩的神经控制</h3>
+                                    <p>中枢神经系统通过调节运动神经元的激活模式来控制肌肉收缩的力量和持续时间。这种控制主要通过两种机制实现：</p>
+                                    
+                                    <h4>1. 运动单位募集（Motor Unit Recruitment）</h4>
+                                    <p>当需要增加肌肉力量时，神经系统会按照特定顺序激活更多的运动单位。这种现象称为<strong>运动单位募集</strong>，遵循<strong>大小原则</strong>：</p>
+                                    <ul>
+                                        <li>首先激活小型运动单位（支配少量肌纤维，通常是慢肌纤维）</li>
+                                        <li>随着力量需求增加，逐渐激活中型和大型运动单位（支配更多肌纤维，通常包括快肌纤维）</li>
+                                    </ul>
+                                    
+                                    <h4>2. 发放频率调制（Rate Coding）</h4>
+                                    <p>神经系统还可以通过改变向肌肉发送神经冲动的频率来调节肌肉力量。这种现象称为<strong>发放频率调制</strong>：</p>
+                                    <ul>
+                                        <li>低频率的神经冲动产生单独的肌肉收缩，称为<strong>肌肉抽搐（Twitch）</strong></li>
+                                        <li>随着频率增加，抽搐开始融合，产生<strong>不完全强直收缩（Incomplete tetanus）</strong></li>
+                                        <li>在高频率下，抽搐完全融合，产生<strong>完全强直收缩（Complete tetanus）</strong>，产生最大力量</li>
+                                    </ul>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/motor_unit_recruitment.jpg" alt="运动单位募集" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                                <p class="text-muted mt-2">图3.2：运动单位募集与肌肉力量产生的关系</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="interactive-element" id="neuromuscular-junction-interactive">
+                                        <h4>神经肌肉连接交互动画</h4>
+                                        <p>下面的动画展示了神经冲动如何从运动神经元传递到肌纤维，以及乙酰胆碱在这一过程中的作用。</p>
+                                        <div class="text-center">
+                                            <img src="images/nmj_static.png" alt="神经肌肉连接" id="nmjImage" class="img-fluid rounded shadow" style="max-height: 450px;">
+                                            <div class="mt-3">
+                                                <button class="btn btn-primary" id="startNMJAnimation">开始动画</button>
+                                                <button class="btn btn-secondary" id="resetNMJAnimation">重置</button>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-4">
+                                            <button class="btn btn-primary btn-sm module-nav-btn" data-target="module4">继续学习模块4：肌肉收缩机制 <i class="fas fa-arrow-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="module4" class="py-5 module-section">
+                    <div class="container">
+                        <h2 class="module-title">模块4：肌肉收缩机制</h2>
+                        <div class="module-content">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h3>滑行丝/摆动杠杆臂模型概述</h3>
+                                    <p>肌肉收缩的分子机制主要由<strong>滑行丝模型（Sliding Filament Model）</strong>和<strong>摆动杠杆臂模型（Swinging Lever-Arm Model）</strong>解释。这两个模型共同描述了肌肉收缩过程中肌动蛋白和肌球蛋白之间的相互作用。</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/sliding_filament_model.jpg" alt="滑行丝模型" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                                <p class="text-muted mt-2">图4.1：滑行丝模型示意图，展示肌动蛋白和肌球蛋白的相对滑动</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h4>滑行丝模型的基本原理</h4>
+                                    <p>滑行丝模型由Hugh Huxley和Andrew Huxley于1954年提出，是理解肌肉收缩的基础理论。其核心概念是：</p>
+                                    <ul>
+                                        <li>肌肉收缩时，肌动蛋白（细肌丝）和肌球蛋白（粗肌丝）的长度不变</li>
+                                        <li>收缩是由肌动蛋白丝相对于肌球蛋白丝的滑动造成的</li>
+                                        <li>这种滑动使Z线相互靠近，导致肌节缩短</li>
+                                        <li>当所有肌节同时缩短时，整个肌肉收缩</li>
+                                    </ul>
+                                    
+                                    <h4>摆动杠杆臂模型的补充</h4>
+                                    <p>摆动杠杆臂模型进一步解释了肌球蛋白头部如何产生力量使肌动蛋白滑动：</p>
+                                    <ul>
+                                        <li>肌球蛋白头部与肌动蛋白结合形成"横桥"</li>
+                                        <li>ATP水解提供能量，使肌球蛋白头部发生构象变化</li>
+                                        <li>这种构象变化类似于杠杆摆动，推动肌动蛋白丝向肌节中心滑动</li>
+                                        <li>这个过程重复多次，形成"横桥循环"，产生持续的力量</li>
+                                    </ul>
+                                    
+                                    <div class="alert alert-primary" role="alert">
+                                        <h4>横桥循环的步骤</h4>
+                                        <ol>
+                                            <li>ATP结合到肌球蛋白头部，使其从肌动蛋白上分离</li>
+                                            <li>ATP水解为ADP和Pi，肌球蛋白头部处于"高能"状态</li>
+                                            <li>肌球蛋白头部与肌动蛋白结合形成横桥</li>
+                                            <li>Pi释放，触发力量产生冲程，肌球蛋白头部摆动</li>
+                                            <li>ADP释放，肌球蛋白头部回到初始状态</li>
+                                            <li>新的ATP分子结合，循环重新开始</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-primary text-white">
+                                            <h4 class="mb-0">关键术语</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <dl>
+                                                <dt>滑行丝模型</dt>
+                                                <dd>解释肌肉收缩的理论，认为收缩是由肌动蛋白丝相对于肌球蛋白丝的滑动造成的</dd>
+                                                
+                                                <dt>摆动杠杆臂模型</dt>
+                                                <dd>解释肌球蛋白头部如何产生力量的理论，描述了肌球蛋白头部的构象变化</dd>
+                                                
+                                                <dt>横桥</dt>
+                                                <dd>肌球蛋白头部与肌动蛋白的临时连接</dd>
+                                                
+                                                <dt>横桥循环</dt>
+                                                <dd>肌球蛋白头部与肌动蛋白结合、产生力量并分离的循环过程</dd>
+                                                
+                                                <dt>ATP</dt>
+                                                <dd>三磷酸腺苷，肌肉收缩的直接能量来源</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">应用知识</h4>
+                                            <p>理解肌肉收缩机制对以下方面有重要意义：</p>
+                                            <ul>
+                                                <li>设计针对特定肌纤维类型的训练方案</li>
+                                                <li>理解肌肉疲劳的生理机制</li>
+                                                <li>开发提高肌肉力量和耐力的策略</li>
+                                                <li>理解某些肌肉疾病的病理机制</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <h3>收缩所需能量</h3>
+                                    <p>肌肉收缩是一个需要能量的过程，主要依赖于ATP（三磷酸腺苷）的水解。肌肉细胞通过多种途径产生ATP：</p>
+                                    
+                                    <h4>ATP的来源</h4>
+                                    <ul>
+                                        <li><strong>肌酸磷酸系统</strong>：快速提供ATP，适用于短时间高强度活动（持续几秒钟）</li>
+                                        <li><strong>糖酵解</strong>：在无氧条件下分解葡萄糖产生ATP，适用于中等强度活动（持续几分钟）</li>
+                                        <li><strong>有氧代谢</strong>：在线粒体中通过氧化葡萄糖、脂肪酸和氨基酸产生大量ATP，适用于长时间低强度活动</li>
+                                    </ul>
+                                    
+                                    <p>不同类型的肌纤维依赖不同的能量系统，这也是它们功能特性差异的基础。</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/atp_energy_systems.jpg" alt="ATP能量系统" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                                <p class="text-muted mt-2">图4.2：肌肉收缩中的三种主要能量系统及其时间特性</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h3>兴奋-收缩耦联的调节</h3>
+                                    <p><strong>兴奋-收缩耦联（Excitation-Contraction Coupling）</strong>是指神经系统的电信号（兴奋）转化为肌肉收缩的过程。这个过程涉及多个步骤和多种蛋白质的协同作用。</p>
+                                    
+                                    <h4>兴奋-收缩耦联的步骤</h4>
+                                    <ol>
+                                        <li><strong>神经冲动到达神经肌肉接头</strong>，释放乙酰胆碱</li>
+                                        <li><strong>肌纤维膜去极化</strong>，产生动作电位</li>
+                                        <li><strong>动作电位沿横管系统传播</strong>到肌纤维内部</li>
+                                        <li><strong>横管上的二氢吡啶受体（DHPR）感知膜电位变化</strong>，改变构象</li>
+                                        <li><strong>DHPR激活肌浆网上的钙释放通道（RyR）</strong>，这两种受体在横管和终池之间的解剖关系使这一步成为可能</li>
+                                        <li><strong>钙离子从肌浆网释放</strong>到肌浆中</li>
+                                        <li><strong>钙离子与肌钙蛋白C结合</strong>，导致原肌球蛋白移位</li>
+                                        <li><strong>肌动蛋白上的肌球蛋白结合位点暴露</strong>，允许横桥形成</li>
+                                        <li><strong>横桥循环开始</strong>，产生肌肉收缩</li>
+                                    </ol>
+                                    
+                                    <h4>钙离子的关键作用</h4>
+                                    <p>钙离子（Ca<sup>2+</sup>）在肌肉收缩的调节中起着核心作用：</p>
+                                    <ul>
+                                        <li>静息状态下，肌浆中的钙离子浓度很低</li>
+                                        <li>肌肉激活时，钙离子从肌浆网释放，浓度迅速升高</li>
+                                        <li>钙离子与肌钙蛋白C结合，引起一系列构象变化</li>
+                                        <li>这些变化使原肌球蛋白移开，暴露肌动蛋白上的肌球蛋白结合位点</li>
+                                        <li>肌肉放松时，钙离子被肌浆网重新吸收，浓度降低</li>
+                                        <li>原肌球蛋白回到原位，阻断肌球蛋白结合位点，肌肉放松</li>
+                                    </ul>
+                                    
+                                    <div class="interactive-element" id="muscle-contraction-interactive">
+                                        <h4>肌肉收缩机制交互模拟</h4>
+                                        <p>下面的交互模拟展示了肌肉收缩的分子机制，包括滑行丝模型和横桥循环。使用控制按钮可以逐步观察整个过程。</p>
+                                        <div class="text-center">
+                                            <img src="images/contraction_mechanism.png" alt="肌肉收缩机制" id="contractionImage" class="img-fluid rounded shadow" style="max-height: 450px;">
+                                            <div class="mt-3">
+                                                <div class="btn-group" role="group">
+                                                    <button class="btn btn-outline-primary" id="step1">步骤1: 静息状态</button>
+                                                    <button class="btn btn-outline-primary" id="step2">步骤2: 钙释放</button>
+                                                    <button class="btn btn-outline-primary" id="step3">步骤3: 横桥形成</button>
+                                                    <button class="btn btn-outline-primary" id="step4">步骤4: 力量产生</button>
+                                                    <button class="btn btn-outline-primary" id="step5">步骤5: 横桥分离</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-4">
+                                            <button class="btn btn-primary btn-sm module-nav-btn" data-target="module5">继续学习模块5：肌肉疲劳与恢复 <i class="fas fa-arrow-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="module5" class="py-5 bg-light module-section">
+                    <div class="container">
+                        <h2 class="module-title">模块5：运动与肌肉疲劳</h2>
+                        <div class="module-content">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h3>肌肉疲劳的机制</h3>
+                                    <p>肌肉疲劳是指肌肉在持续或重复活动后产生力量的能力下降。这是一个复杂的生理过程，涉及多种因素和机制。</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/muscle_fatigue_mechanism.jpg" alt="肌肉疲劳机制" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                                <p class="text-muted mt-2">图5.1：肌肉疲劳的多层次机制，从中枢神经系统到肌纤维水平</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h4>肌肉疲劳的主要原因</h4>
+                                    <p>肌肉疲劳可能源于多个部位的功能障碍，包括：</p>
+                                    <ul>
+                                        <li><strong>中枢神经系统疲劳</strong>：大脑和脊髓激活肌肉的能力下降</li>
+                                        <li><strong>神经肌肉接头疲劳</strong>：神经递质释放或作用效率降低</li>
+                                        <li><strong>肌纤维本身疲劳</strong>：肌纤维内部生化和机械功能的改变</li>
+                                    </ul>
+                                    
+                                    <h4>肌纤维疲劳的生化机制</h4>
+                                    <p>在肌纤维水平，疲劳与多种生化变化相关：</p>
+                                    <ol>
+                                        <li><strong>能量底物耗竭</strong>：ATP、肌酸磷酸和糖原储备减少</li>
+                                        <li><strong>代谢产物积累</strong>：乳酸、无机磷酸盐、氢离子等积累</li>
+                                        <li><strong>钙离子处理障碍</strong>：肌浆网释放和重吸收钙离子的能力下降</li>
+                                        <li><strong>肌丝蛋白功能改变</strong>：肌球蛋白和肌动蛋白的相互作用效率降低</li>
+                                        <li><strong>活性氧和自由基损伤</strong>：氧化应激导致细胞结构和功能损伤</li>
+                                    </ol>
+                                    
+                                    <div class="alert alert-info" role="alert">
+                                        <h4>不同类型运动的疲劳机制差异</h4>
+                                        <p>不同类型的运动会导致不同的疲劳机制占主导地位：</p>
+                                        <ul>
+                                            <li><strong>高强度短时间运动</strong>（如举重、短跑）：主要受能量底物耗竭和磷酸盐积累影响</li>
+                                            <li><strong>中等强度持续运动</strong>（如中长跑）：主要受糖原耗竭和乳酸积累影响</li>
+                                            <li><strong>长时间低强度运动</strong>（如马拉松）：主要受中枢神经系统疲劳和肌纤维损伤影响</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-primary text-white">
+                                            <h4 class="mb-0">关键术语</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <dl>
+                                                <dt>肌肉疲劳</dt>
+                                                <dd>肌肉在持续或重复活动后产生力量的能力下降</dd>
+                                                
+                                                <dt>中枢疲劳</dt>
+                                                <dd>源于中枢神经系统的疲劳，表现为神经激活肌肉的能力下降</dd>
+                                                
+                                                <dt>外周疲劳</dt>
+                                                <dd>源于肌肉本身的疲劳，表现为肌纤维收缩能力下降</dd>
+                                                
+                                                <dt>运动相关的肌肉痉挛（EAMC）</dt>
+                                                <dd>运动中或运动后发生的痛性、不自主的肌肉收缩</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">实践应用</h4>
+                                            <p>了解肌肉疲劳和痉挛的机制有助于：</p>
+                                            <ul>
+                                                <li>制定更有效的训练计划</li>
+                                                <li>开发针对性的恢复策略</li>
+                                                <li>预防和管理运动相关的肌肉痉挛</li>
+                                                <li>提高运动表现和耐力</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <h3>运动相关肌肉痉挛</h3>
+                                    <p>运动相关的肌肉痉挛（Exercise-Associated Muscle Cramps, EAMC）是运动中或运动后发生的痛性、不自主的肌肉收缩。这是运动员常见的问题，其确切机制仍有争议。</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/muscle_cramp_theories.jpg" alt="肌肉痉挛理论" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                                <p class="text-muted mt-2">图5.2：运动相关肌肉痉挛的两种主要理论对比</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h4>传统理论与新观点</h4>
+                                    <p>关于运动相关肌肉痉挛的原因，存在两种主要理论：</p>
+                                    <ol>
+                                        <li><strong>脱水和电解质失衡理论</strong>：传统上认为汗液流失导致的脱水和电解质（特别是钠、钾、镁）失衡是肌肉痉挛的主要原因</li>
+                                        <li><strong>神经控制改变理论</strong>：较新的研究表明，肌肉痉挛可能主要是由于中枢神经系统对肌肉的控制发生改变</li>
+                                    </ol>
+                                    
+                                    <h4>脱水和电解质失衡理论的局限性</h4>
+                                    <p>尽管脱水和电解质失衡理论在运动医学中广为接受，但近年来的研究表明这一理论存在局限性：</p>
+                                    <ul>
+                                        <li>许多研究未能证实痉挛运动员与非痉挛运动员之间存在显著的水分或电解质状态差异</li>
+                                        <li>电解质补充并不总能有效预防或缓解肌肉痉挛</li>
+                                        <li>在实验室条件下，脱水和电解质失衡很难可靠地诱发肌肉痉挛</li>
+                                    </ul>
+                                    
+                                    <h4>神经控制改变理论</h4>
+                                    <p>更新的研究支持神经控制改变理论，认为肌肉痉挛主要是由于：</p>
+                                    <ul>
+                                        <li><strong>运动神经元兴奋性增加</strong>：肌肉疲劳导致运动神经元变得更容易被激活</li>
+                                        <li><strong>肌肉纺锤体敏感性改变</strong>：肌肉纺锤体是感受肌肉长度变化的感受器，其功能改变可能导致异常反射活动</li>
+                                        <li><strong>高尔基腱器官抑制减弱</strong>：高尔基腱器官通常抑制过度的肌肉收缩，其功能减弱可能导致痉挛</li>
+                                        <li><strong>肌肉疲劳</strong>：疲劳的肌肉更容易发生痉挛，特别是在拉长状态下</li>
+                                    </ul>
+                                    
+                                    <h4>运动相关肌肉痉挛的预防和处理</h4>
+                                    <p>基于当前的理解，预防和处理肌肉痉挛的策略包括：</p>
+                                    <ol>
+                                        <li><strong>适当的训练</strong>：逐渐增加训练强度和持续时间，避免过度疲劳</li>
+                                        <li><strong>肌肉拉伸</strong>：定期拉伸容易痉挛的肌肉，特别是在运动前后</li>
+                                        <li><strong>神经肌肉训练</strong>：改善神经对肌肉的控制</li>
+                                        <li><strong>维持水分和电解质平衡</strong>：虽然可能不是主要原因，但仍然重要</li>
+                                        <li><strong>痉挛时的处理</strong>：轻柔拉伸痉挛的肌肉，保持拉伸直到痉挛缓解</li>
+                                    </ol>
+                                    
+                                    <div class="interactive-element" id="muscle-fatigue-interactive">
+                                        <h4>肌肉疲劳模拟</h4>
+                                        <p>下面的交互模拟展示了不同类型运动对肌肉疲劳的影响。选择运动类型和强度，观察肌肉力量、能量底物和代谢产物的变化。</p>
+                                        <div class="text-center">
+                                            <img src="images/fatigue_simulation.jpg" alt="肌肉疲劳模拟" id="fatigueImage" class="img-fluid rounded shadow" style="max-height: 400px;">
+                                            <div class="mt-3">
+                                                <div class="btn-group" role="group">
+                                                    <button class="btn btn-outline-primary" id="exercise1">高强度短时间运动</button>
+                                                    <button class="btn btn-outline-primary" id="exercise2">中等强度持续运动</button>
+                                                    <button class="btn btn-outline-primary" id="exercise3">长时间低强度运动</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-4">
+                                            <button class="btn btn-primary btn-sm module-nav-btn" data-target="module6">继续学习模块6：肌纤维类型与适应 <i class="fas fa-arrow-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="module6" class="py-5 module-section">
+                    <div class="container">
+                        <h2 class="module-title">模块6：肌纤维类型</h2>
+                        <div class="module-content">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h3>骨骼肌纤维类型概述</h3>
+                                    <p>人体骨骼肌由不同类型的肌纤维组成，这些纤维在生化特性、收缩速度和疲劳抵抗能力方面存在显著差异。这种多样性使肌肉能够执行从精细控制到爆发力量再到长时间耐力活动的各种功能。</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/muscle_fiber_types.jpg" alt="肌纤维类型" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                                <p class="text-muted mt-2">图6.1：三种主要肌纤维类型的显微结构对比</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h4>肌纤维类型的分类</h4>
+                                    <p>根据收缩速度、代谢特性和疲劳抵抗能力，人体骨骼肌纤维主要分为三种类型：</p>
+                                    <ul>
+                                        <li><strong>I型纤维（慢肌纤维）</strong>：也称为慢氧化纤维或红肌纤维</li>
+                                        <li><strong>IIa型纤维（中间纤维）</strong>：也称为快氧化糖酵解纤维</li>
+                                        <li><strong>IIx型纤维（快肌纤维）</strong>：也称为快糖酵解纤维或白肌纤维</li>
+                                    </ul>
+                                    
+                                    <div class="alert alert-primary" role="alert">
+                                        <h4>肌纤维类型命名的演变</h4>
+                                        <p>肌纤维类型的命名系统随着研究的深入而演变。早期研究将肌纤维简单分为"红肌"和"白肌"，基于其颜色差异。后来，根据收缩速度分为"快肌"和"慢肌"。现代分类系统基于肌球蛋白重链（MHC）的亚型，将肌纤维分为I型、IIa型和IIx型。在某些较早的文献中，人类IIx型纤维被称为IIb型，但现在认为真正的IIb型纤维主要存在于小型哺乳动物中，而不是人类。</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-primary text-white">
+                                            <h4 class="mb-0">关键术语</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <dl>
+                                                <dt>慢肌纤维（I型纤维）</dt>
+                                                <dd>收缩速度慢、疲劳抵抗能力高的肌纤维，适合长时间低强度活动</dd>
+                                                
+                                                <dt>快肌纤维（IIx型纤维）</dt>
+                                                <dd>收缩速度快、力量大但易疲劳的肌纤维，适合短时间高强度活动</dd>
+                                                
+                                                <dt>中间纤维（IIa型纤维）</dt>
+                                                <dd>兼具一定快速收缩能力和疲劳抵抗能力的肌纤维</dd>
+                                                
+                                                <dt>肌球蛋白重链（MHC）</dt>
+                                                <dd>肌球蛋白的主要组成部分，其亚型决定了肌纤维的类型</dd>
+                                                
+                                                <dt>有氧代谢</dt>
+                                                <dd>利用氧气分解底物产生能量的过程，效率高但速率较慢</dd>
+                                                
+                                                <dt>无氧糖酵解</dt>
+                                                <dd>在无氧条件下分解葡萄糖产生能量的过程，速率快但效率低</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">肌纤维类型分布</h4>
+                                            <p>不同肌肉中肌纤维类型的分布存在差异：</p>
+                                            <ul>
+                                                <li><strong>姿势肌</strong>（如脊柱深层肌肉）：I型纤维比例高</li>
+                                                <li><strong>眼外肌</strong>：特殊的快速纤维，收缩速度极快</li>
+                                                <li><strong>腿部肌肉</strong>：混合分布，但比例因功能而异</li>
+                                                <li><strong>上肢肌肉</strong>：通常II型纤维比例较高</li>
+                                            </ul>
+                                            <p>个体间的肌纤维类型分布也存在显著差异，部分由遗传因素决定。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <h3>肌纤维类型的生化和收缩特性</h3>
+                                    <p>不同类型的肌纤维在多个方面存在差异，这些差异决定了它们的功能特性：</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-10 offset-md-1 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/fiber_type_comparison.jpg" alt="肌纤维类型比较" class="img-fluid rounded shadow" style="max-height: 400px;">
+                                                <p class="text-muted mt-2">图6.2：三种主要肌纤维类型的生化和功能特性比较</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h4>I型纤维（慢肌纤维）的特性</h4>
+                                            <ul>
+                                                <li><strong>收缩速度</strong>：较慢</li>
+                                                <li><strong>肌球蛋白ATPase活性</strong>：低</li>
+                                                <li><strong>线粒体含量</strong>：高</li>
+                                                <li><strong>毛细血管密度</strong>：高</li>
+                                                <li><strong>肌红蛋白含量</strong>：高（因此呈红色）</li>
+                                                <li><strong>主要能量系统</strong>：有氧代谢</li>
+                                                <li><strong>疲劳抵抗能力</strong>：高</li>
+                                                <li><strong>力量产生能力</strong>：低</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h4>IIa型纤维（中间纤维）的特性</h4>
+                                            <ul>
+                                                <li><strong>收缩速度</strong>：中等到快</li>
+                                                <li><strong>肌球蛋白ATPase活性</strong>：中等到高</li>
+                                                <li><strong>线粒体含量</strong>：中等</li>
+                                                <li><strong>毛细血管密度</strong>：中等</li>
+                                                <li><strong>肌红蛋白含量</strong>：中等</li>
+                                                <li><strong>主要能量系统</strong>：有氧和无氧混合</li>
+                                                <li><strong>疲劳抵抗能力</strong>：中等</li>
+                                                <li><strong>力量产生能力</strong>：中等到高</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h4>IIx型纤维（快肌纤维）的特性</h4>
+                                            <ul>
+                                                <li><strong>收缩速度</strong>：快</li>
+                                                <li><strong>肌球蛋白ATPase活性</strong>：高</li>
+                                                <li><strong>线粒体含量</strong>：低</li>
+                                                <li><strong>毛细血管密度</strong>：低</li>
+                                                <li><strong>肌红蛋白含量</strong>：低（因此呈白色）</li>
+                                                <li><strong>主要能量系统</strong>：无氧糖酵解</li>
+                                                <li><strong>疲劳抵抗能力</strong>：低</li>
+                                                <li><strong>力量产生能力</strong>：高</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <h3>肌纤维类型与运动表现</h3>
+                                    <p>肌纤维类型的分布对运动表现有显著影响，这解释了为什么某些人在特定类型的运动中表现更好。</p>
+                                    
+                                    <h4>不同运动项目对肌纤维类型的要求</h4>
+                                    <ul>
+                                        <li><strong>耐力运动</strong>（如马拉松、长距离游泳）：需要高比例的I型纤维</li>
+                                        <li><strong>力量/爆发力运动</strong>（如举重、短跑）：需要高比例的IIx型纤维</li>
+                                        <li><strong>混合型运动</strong>（如中距离跑、团体球类运动）：需要平衡的I型和II型纤维分布，特别是较高比例的IIa型纤维</li>
+                                    </ul>
+                                    
+                                    <h4>精英运动员的肌纤维特点</h4>
+                                    <p>研究表明，不同项目的精英运动员在肌纤维类型分布上存在显著差异：</p>
+                                    <ul>
+                                        <li>精英马拉松运动员的腿部肌肉中I型纤维比例可高达70-80%</li>
+                                        <li>精英短跑运动员的腿部肌肉中II型纤维比例可高达60-70%</li>
+                                        <li>成功的中距离运动员通常拥有更高比例的IIa型纤维</li>
+                                    </ul>
+                                    
+                                    <h4>训练对肌纤维类型的影响</h4>
+                                    <p>虽然肌纤维类型的基本分布主要由遗传决定，但训练可以在一定程度上改变肌纤维的特性：</p>
+                                    <ul>
+                                        <li><strong>耐力训练</strong>可以增加I型和IIa型纤维的有氧能力，提高线粒体数量和毛细血管密度</li>
+                                        <li><strong>力量训练</strong>可以增加所有类型肌纤维的横截面积，提高力量产生能力</li>
+                                        <li><strong>高强度间歇训练</strong>可以促进IIx型纤维向IIa型纤维的转化</li>
+                                        <li><strong>停止训练</strong>可能导致IIa型纤维向IIx型纤维的回转</li>
+                                    </ul>
+                                    <p>然而，I型和II型纤维之间的基本转化（如I型转为II型或相反）在人类中几乎不可能通过训练实现。</p>
+                                    
+                                    <div class="interactive-element" id="fiber-type-interactive">
+                                        <h4>肌纤维类型比较</h4>
+                                        <p>下面的交互图表比较了三种主要肌纤维类型的特性。点击不同特性可查看详细比较。</p>
+                                        <div class="text-center">
+                                            <img src="images/fiber_type_chart.jpg" alt="肌纤维类型比较图表" id="fiberTypeChart" class="img-fluid rounded shadow" style="max-height: 450px;">
+                                            <div class="mt-3">
+                                                <div class="btn-group" role="group">
+                                                    <button class="btn btn-outline-primary" id="property1">收缩速度</button>
+                                                    <button class="btn btn-outline-primary" id="property2">代谢特性</button>
+                                                    <button class="btn btn-outline-primary" id="property3">疲劳抵抗</button>
+                                                    <button class="btn btn-outline-primary" id="property4">力量产生</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-4">
+                                            <button class="btn btn-primary btn-sm module-nav-btn" data-target="module7">继续学习模块7：肌肉动作类型 <i class="fas fa-arrow-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="module7" class="py-5 bg-light module-section">
+                    <div class="container">
+                        <h2 class="module-title">模块7：肌肉动作与力量调节</h2>
+                        <div class="module-content">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h3>肌肉动作类型</h3>
+                                    <p>肌肉动作（muscle action）是指肌肉在神经刺激下产生张力的过程。根据肌肉长度的变化，肌肉动作可分为三种基本类型：</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-10 offset-md-1 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/muscle_action_types.jpg" alt="肌肉动作类型" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                                <p class="text-muted mt-2">图7.1：三种基本肌肉动作类型的对比：向心收缩、离心收缩和等长收缩</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h4>1. 向心收缩（Concentric Action）</h4>
+                                    <p>向心收缩是指肌肉在产生张力的同时缩短的过程。这是最常见的肌肉动作类型，例如：</p>
+                                    <ul>
+                                        <li>二头肌收缩使肘关节弯曲</li>
+                                        <li>股四头肌收缩使膝关节伸直</li>
+                                        <li>提举重物时的上推阶段</li>
+                                    </ul>
+                                    <p>在向心收缩中，肌肉产生的力量大于外部负荷，导致肌肉缩短并产生运动。</p>
+                                    
+                                    <h4>2. 离心收缩（Eccentric Action）</h4>
+                                    <p>离心收缩是指肌肉在产生张力的同时被拉长的过程。这种动作通常发生在控制运动或抵抗重力的情况下，例如：</p>
+                                    <ul>
+                                        <li>下楼梯时股四头肌的控制作用</li>
+                                        <li>放下重物时二头肌的控制作用</li>
+                                        <li>深蹲下降阶段的股四头肌</li>
+                                    </ul>
+                                    <p>在离心收缩中，外部负荷大于肌肉产生的力量，但肌肉仍在产生张力以控制运动速度。</p>
+                                    
+                                    <h4>3. 等长收缩（Isometric Action）</h4>
+                                    <p>等长收缩是指肌肉产生张力但长度不变的过程。这种动作通常发生在维持姿势或抵抗不可移动物体的情况下，例如：</p>
+                                    <ul>
+                                        <li>保持平板支撑姿势</li>
+                                        <li>推不动的墙壁</li>
+                                        <li>握紧固定物体</li>
+                                    </ul>
+                                    <p>在等长收缩中，肌肉产生的力量等于外部负荷，因此肌肉长度不变。</p>
+                                    
+                                    <div class="alert alert-info" role="alert">
+                                        <h4>肌肉动作与肌肉收缩的区别</h4>
+                                        <p>虽然"肌肉收缩"这一术语常被用来描述所有类型的肌肉动作，但严格来说，只有向心动作才是真正的"收缩"（肌肉缩短）。因此，现代运动生理学更倾向于使用"肌肉动作"（muscle action）这一术语来描述所有类型的肌肉张力产生，无论肌肉长度是否变化。</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-primary text-white">
+                                            <h4 class="mb-0">关键术语</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <dl>
+                                                <dt>向心收缩（Concentric Action）</dt>
+                                                <dd>肌肉在产生张力的同时缩短的过程</dd>
+                                                
+                                                <dt>离心收缩（Eccentric Action）</dt>
+                                                <dd>肌肉在产生张力的同时被拉长的过程</dd>
+                                                
+                                                <dt>等长收缩（Isometric Action）</dt>
+                                                <dd>肌肉产生张力但长度不变的过程</dd>
+                                                
+                                                <dt>动态运动（Dynamic Exercise）</dt>
+                                                <dd>涉及关节运动的运动形式</dd>
+                                                
+                                                <dt>静态运动（Static Exercise）</dt>
+                                                <dd>不涉及关节运动的运动形式</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">肌肉动作的应用</h4>
+                                            <p>不同类型的肌肉动作在训练和康复中有不同的应用：</p>
+                                            <ul>
+                                                <li><strong>向心训练</strong>：提高肌肉力量和爆发力</li>
+                                                <li><strong>离心训练</strong>：增加肌肉质量，提高肌腱强度</li>
+                                                <li><strong>等长训练</strong>：提高特定角度的肌肉力量，适合关节受伤恢复期</li>
+                                            </ul>
+                                            <p>综合运用不同类型的肌肉动作可以获得最佳的训练效果。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <h3>动态与静态运动</h3>
+                                    <p>根据肌肉动作类型和关节运动的有无，运动可分为动态运动和静态运动：</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/dynamic_exercise.jpg" alt="动态运动" class="img-fluid rounded shadow" style="max-height: 300px;">
+                                                <p class="text-muted mt-2">图7.2：动态运动示例 - 深蹲运动中的向心和离心阶段</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/static_exercise.jpg" alt="静态运动" class="img-fluid rounded shadow" style="max-height: 300px;">
+                                                <p class="text-muted mt-2">图7.3：静态运动示例 - 平板支撑中的等长肌肉动作</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h4>动态运动（Dynamic Exercise）</h4>
+                                    <p>动态运动是指涉及关节运动的运动形式，包括：</p>
+                                    <ul>
+                                        <li><strong>向心运动</strong>：主要涉及向心肌肉动作，如举重的上推阶段</li>
+                                        <li><strong>离心运动</strong>：主要涉及离心肌肉动作，如举重的下放阶段</li>
+                                        <li><strong>复合运动</strong>：涉及向心和离心肌肉动作的组合，如大多数日常活动和运动</li>
+                                    </ul>
+                                    
+                                    <h4>静态运动（Static Exercise）</h4>
+                                    <p>静态运动是指不涉及关节运动的运动形式，主要涉及等长肌肉动作，如：</p>
+                                    <ul>
+                                        <li>墙壁推举</li>
+                                        <li>等长肌力训练</li>
+                                        <li>保持特定姿势的练习</li>
+                                    </ul>
+                                    
+                                    <h3>肌肉中的力量调节</h3>
+                                    <p>肌肉产生的力量大小受多种因素影响，主要包括三个关键因素：</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-10 offset-md-1 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/force_regulation.jpg" alt="肌肉力量调节" class="img-fluid rounded shadow" style="max-height: 400px;">
+                                                <p class="text-muted mt-2">图7.4：肌肉力量调节的三个主要机制：运动单位募集、发放频率调制和肌肉长度-张力关系</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h4>1. 运动单位募集（Motor Unit Recruitment）</h4>
+                                    <p>如前所述，运动单位是指一个运动神经元及其支配的所有肌纤维。力量调节的主要机制之一是改变激活的运动单位数量：</p>
+                                    <ul>
+                                        <li>激活更多运动单位→产生更大力量</li>
+                                        <li>激活较少运动单位→产生较小力量</li>
+                                    </ul>
+                                    <p>运动单位募集遵循"大小原则"（Henneman's Size Principle）：首先激活小型运动单位（支配I型纤维），随着力量需求增加，逐渐激活中型和大型运动单位（支配II型纤维）。</p>
+                                    
+                                    <h4>2. 发放频率调制（Rate Coding）</h4>
+                                    <p>神经系统可以通过改变向肌肉发送神经冲动的频率来调节力量：</p>
+                                    <ul>
+                                        <li>低频率刺激→产生单独的肌肉抽搐</li>
+                                        <li>中等频率刺激→产生不完全强直收缩</li>
+                                        <li>高频率刺激→产生完全强直收缩（最大力量）</li>
+                                    </ul>
+                                    <p>这种机制允许肌肉在不增加激活的运动单位数量的情况下增加力量。</p>
+                                    
+                                    <h4>3. 肌肉长度-张力关系</h4>
+                                    <p>肌肉产生的力量与其长度密切相关：</p>
+                                    <ul>
+                                        <li>在最佳长度（通常是静息长度附近）时，肌肉产生最大力量</li>
+                                        <li>过度拉长或过度缩短时，肌肉产生的力量减小</li>
+                                    </ul>
+                                    <p>这种关系基于肌节内肌动蛋白和肌球蛋白的重叠程度：最佳重叠时产生最大力量，重叠过多或过少时力量减小。</p>
+                                    
+                                    <h3>力量-速度/功率-速度关系</h3>
+                                    <p>肌肉产生的力量与其收缩速度之间存在反比关系，这被称为力量-速度关系：</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/force_velocity_curve.jpg" alt="力量-速度关系" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                                <p class="text-muted mt-2">图7.5：肌肉的力量-速度关系和功率-速度关系曲线</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <ul>
+                                        <li>收缩速度增加→产生的力量减小</li>
+                                        <li>收缩速度减小→产生的力量增加</li>
+                                        <li>等长收缩（速度为零）→产生最大力量</li>
+                                        <li>离心收缩（负速度）→可产生比等长收缩更大的力量</li>
+                                    </ul>
+                                    
+                                    <p>功率（力量×速度）与速度的关系呈倒U形曲线：</p>
+                                    <ul>
+                                        <li>在非常低或非常高的速度下，功率较低</li>
+                                        <li>在中等速度下，功率达到最大值</li>
+                                    </ul>
+                                    <p>这一关系对运动表现有重要影响，不同运动项目需要在不同的力量-速度范围内发挥最佳功率。</p>
+                                    
+                                    <div class="interactive-element" id="muscle-action-interactive">
+                                        <h4>肌肉动作类型演示</h4>
+                                        <p>下面的交互动画展示了三种基本肌肉动作类型。点击不同类型可查看详细演示。</p>
+                                        <div class="text-center">
+                                            <img src="images/muscle_action_demo.jpg" alt="肌肉动作类型演示" id="muscleActionDemo" class="img-fluid rounded shadow" style="max-height: 400px;">
+                                            <div class="mt-3">
+                                                <div class="btn-group" role="group">
+                                                    <button class="btn btn-outline-primary" id="concentric">向心收缩</button>
+                                                    <button class="btn btn-outline-primary" id="eccentric">离心收缩</button>
+                                                    <button class="btn btn-outline-primary" id="isometric">等长收缩</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-4">
+                                            <button class="btn btn-primary btn-sm module-nav-btn" data-target="module8">继续学习模块8：应用与综合 <i class="fas fa-arrow-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="module8" class="py-5 module-section">
+                    <div class="container">
+                        <h2 class="module-title">模块8：应用与综合</h2>
+                        <div class="module-content">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h3>骨骼肌知识在运动训练中的应用</h3>
+                                    <p>理解骨骼肌的结构与功能对于设计有效的训练计划和提高运动表现至关重要。本模块将探讨如何将前面学习的知识应用于实际训练和运动情境。</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-10 offset-md-1 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/training_application.jpg" alt="骨骼肌知识在训练中的应用" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                                <p class="text-muted mt-2">图8.1：骨骼肌知识在不同类型训练中的应用</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h4>针对不同肌纤维类型的训练策略</h4>
+                                    <p>基于对肌纤维类型特性的理解，可以设计针对性的训练方案：</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/slow_twitch_training.jpg" alt="慢肌纤维训练" class="img-fluid rounded shadow" style="max-height: 250px;">
+                                                <p class="text-muted mt-2">图8.2：针对I型纤维（慢肌纤维）的耐力训练</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/fast_twitch_training.jpg" alt="快肌纤维训练" class="img-fluid rounded shadow" style="max-height: 250px;">
+                                                <p class="text-muted mt-2">图8.3：针对II型纤维（快肌纤维）的力量训练</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-primary text-white">
+                                            <h5 class="mb-0">I型纤维（慢肌纤维）训练</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul>
+                                                <li><strong>训练特点</strong>：低强度、高重复次数、较短休息时间</li>
+                                                <li><strong>代表性训练</strong>：长跑、长距离骑行、游泳、低强度高重复次数的力量训练</li>
+                                                <li><strong>生理适应</strong>：增加线粒体数量和体积、提高毛细血管密度、增强有氧酶活性</li>
+                                                <li><strong>适用人群</strong>：耐力运动员、需要提高肌肉耐力的人群</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-primary text-white">
+                                            <h5 class="mb-0">II型纤维（快肌纤维）训练</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul>
+                                                <li><strong>训练特点</strong>：高强度、低重复次数、充分休息时间</li>
+                                                <li><strong>代表性训练</strong>：高强度力量训练、爆发力训练、短跑、跳跃训练</li>
+                                                <li><strong>生理适应</strong>：增加肌纤维横截面积、提高神经肌肉激活效率、增强无氧酶活性</li>
+                                                <li><strong>适用人群</strong>：力量和爆发力运动员、需要提高肌肉力量的人群</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <h4>肌肉动作类型在训练中的应用</h4>
+                                    <p>不同类型的肌肉动作可以用于不同的训练目的：</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-10 offset-md-1 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/muscle_action_training.jpg" alt="肌肉动作类型在训练中的应用" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                                <p class="text-muted mt-2">图8.4：不同肌肉动作类型在训练中的应用</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <ul>
+                                        <li><strong>向心训练</strong>：最常用的训练方式，有效提高肌肉力量和爆发力</li>
+                                        <li><strong>离心训练</strong>：可产生更大的机械张力，更有效地刺激肌肉生长；但也可能导致更严重的肌肉损伤和延迟性肌肉酸痛</li>
+                                        <li><strong>等长训练</strong>：适用于关节受伤恢复期，或针对特定关节角度的力量提高；也可用于提高肌肉稳定性和姿势控制</li>
+                                    </ul>
+                                    
+                                    <div class="alert alert-success" role="alert">
+                                        <h4>综合训练方案的设计原则</h4>
+                                        <p>有效的训练方案应综合考虑以下因素：</p>
+                                        <ol>
+                                            <li><strong>特异性原则</strong>：训练应针对特定运动或目标的需求</li>
+                                            <li><strong>超负荷原则</strong>：逐渐增加训练负荷以促进适应</li>
+                                            <li><strong>渐进性原则</strong>：训练强度和复杂性应逐渐增加</li>
+                                            <li><strong>个体差异</strong>：考虑个体的肌纤维类型分布、训练经验和恢复能力</li>
+                                            <li><strong>周期化</strong>：合理安排训练周期，包括高强度和恢复期</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-primary text-white">
+                                            <h4 class="mb-0">案例研究</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <h5>不同运动员的训练需求</h5>
+                                            <dl>
+                                                <dt>马拉松运动员</dt>
+                                                <dd>需要优化I型纤维功能，提高有氧能力和肌肉耐力</dd>
+                                                
+                                                <dt>短跑运动员</dt>
+                                                <dd>需要优化II型纤维功能，提高爆发力和无氧能力</dd>
+                                                
+                                                <dt>足球运动员</dt>
+                                                <dd>需要平衡发展I型和II型纤维，兼顾耐力和爆发力</dd>
+                                                
+                                                <dt>举重运动员</dt>
+                                                <dd>需要最大化II型纤维的力量产生能力</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">实践应用</h4>
+                                            <p>骨骼肌知识在以下领域有重要应用：</p>
+                                            <ul>
+                                                <li><strong>运动训练</strong>：设计针对性训练方案</li>
+                                                <li><strong>康复治疗</strong>：肌肉损伤后的恢复策略</li>
+                                                <li><strong>健康促进</strong>：预防肌肉萎缩和功能下降</li>
+                                                <li><strong>运动表现优化</strong>：根据个体特点调整训练</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <h3>骨骼肌在健康和疾病中的作用</h3>
+                                    <p>骨骼肌不仅是运动的执行器官，还在整体健康和疾病预防中发挥重要作用：</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-10 offset-md-1 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/muscle_health.jpg" alt="骨骼肌与健康" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                                <p class="text-muted mt-2">图8.5：骨骼肌在整体健康中的多重作用</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h4>骨骼肌作为内分泌器官</h4>
+                                    <p>近年来的研究表明，骨骼肌是一个活跃的内分泌器官，可以分泌多种称为肌肉因子（myokines）的物质：</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/myokines.jpg" alt="肌肉因子" class="img-fluid rounded shadow" style="max-height: 300px;">
+                                                <p class="text-muted mt-2">图8.6：骨骼肌分泌的肌肉因子及其全身作用</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <ul>
+                                        <li>这些肌肉因子可以影响全身多个器官系统的功能</li>
+                                        <li>运动可以刺激肌肉因子的释放，产生全身性的健康益处</li>
+                                        <li>这解释了为什么规律运动可以预防多种慢性疾病</li>
+                                    </ul>
+                                    
+                                    <h4>骨骼肌与代谢健康</h4>
+                                    <p>骨骼肌在代谢健康中扮演核心角色：</p>
+                                    <ul>
+                                        <li>是体内最大的葡萄糖消耗器官，对血糖调节至关重要</li>
+                                        <li>是主要的能量消耗部位，对能量平衡和体重管理有重要影响</li>
+                                        <li>肌肉质量和功能下降与代谢疾病风险增加相关</li>
+                                    </ul>
+                                    
+                                    <h4>老化与肌肉功能</h4>
+                                    <p>随着年龄增长，骨骼肌会发生一系列变化：</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/sarcopenia.jpg" alt="肌肉减少症" class="img-fluid rounded shadow" style="max-height: 300px;">
+                                                <p class="text-muted mt-2">图8.7：老化过程中的肌肉减少症（Sarcopenia）</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <ul>
+                                        <li><strong>肌肉减少症（Sarcopenia）</strong>：年龄相关的肌肉质量和功能下降</li>
+                                        <li>II型纤维比例和大小的选择性减少</li>
+                                        <li>神经肌肉连接的退化</li>
+                                        <li>肌肉蛋白质合成能力下降</li>
+                                    </ul>
+                                    <p>抵抗这些变化的最有效策略是规律的力量训练，即使在高龄也能产生显著益处。</p>
+                                    
+                                    <div class="interactive-element" id="training-program-interactive">
+                                        <h4>训练计划设计工具</h4>
+                                        <p>使用下面的交互工具，根据您的目标和特点设计个性化的训练计划。</p>
+                                        <div class="text-center">
+                                            <img src="images/training_program_tool.jpg" alt="训练计划设计工具" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                            <div class="mt-3">
+                                                <div class="form-group mb-3">
+                                                    <label for="trainingGoal">训练目标</label>
+                                                    <select class="form-control" id="trainingGoal">
+                                                        <option>提高肌肉力量</option>
+                                                        <option>增加肌肉耐力</option>
+                                                        <option>增肌减脂</option>
+                                                        <option>提高运动表现</option>
+                                                    </select>
+                                                </div>
+                                                <button class="btn btn-primary" id="generatePlan">生成训练计划</button>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-4">
+                                            <button class="btn btn-primary btn-sm module-nav-btn" data-target="module9">继续学习模块9：总结与评估 <i class="fas fa-arrow-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="module9" class="py-5 bg-light module-section">
+                    <div class="container">
+                        <h2 class="module-title">模块9：总结与评估</h2>
+                        <div class="module-content">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h3>课程内容回顾</h3>
+                                    <p>在本课程中，我们深入探讨了骨骼肌的结构与功能，从微观结构到宏观应用，系统地了解了骨骼肌在运动生理学中的重要性。让我们回顾一下课程的主要内容：</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-10 offset-md-1 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/course_summary.jpg" alt="课程内容概览" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                                <p class="text-muted mt-2">图9.1：骨骼肌结构与功能课程内容概览</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="accordion" id="courseReviewAccordion">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    骨骼肌的基本结构
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#courseReviewAccordion">
+                                                <div class="accordion-body">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <img src="images/muscle_structure_review.jpg" alt="骨骼肌结构回顾" class="img-fluid rounded shadow mb-3">
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <ul>
+                                                                <li>骨骼肌的组织层次：肌肉、肌束、肌纤维</li>
+                                                                <li>结缔组织：表膜、束膜、肌内膜</li>
+                                                                <li>肌纤维的微观结构：肌浆膜、肌浆、肌原纤维</li>
+                                                                <li>肌节结构：A带、I带、Z线、H区</li>
+                                                                <li>卫星细胞及其在肌肉修复中的作用</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    神经肌肉连接与肌肉收缩
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#courseReviewAccordion">
+                                                <div class="accordion-body">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <img src="images/contraction_review.jpg" alt="肌肉收缩回顾" class="img-fluid rounded shadow mb-3">
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <ul>
+                                                                <li>神经肌肉接头的结构和功能</li>
+                                                                <li>运动单位的概念和募集原则</li>
+                                                                <li>滑行丝/摆动杠杆臂模型</li>
+                                                                <li>横桥循环和ATP的作用</li>
+                                                                <li>兴奋-收缩耦联的调节机制</li>
+                                                                <li>钙离子在肌肉收缩中的关键作用</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    肌纤维类型与肌肉疲劳
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#courseReviewAccordion">
+                                                <div class="accordion-body">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <img src="images/fiber_types_review.jpg" alt="肌纤维类型回顾" class="img-fluid rounded shadow mb-3">
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <ul>
+                                                                <li>三种主要肌纤维类型：I型(慢肌)、IIa型(中间)、IIx型(快肌)</li>
+                                                                <li>肌纤维类型的生化和收缩特性</li>
+                                                                <li>肌纤维类型与运动表现的关系</li>
+                                                                <li>肌肉疲劳的机制</li>
+                                                                <li>运动相关的肌肉痉挛</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingFour">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                    肌肉动作与力量调节
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#courseReviewAccordion">
+                                                <div class="accordion-body">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <img src="images/muscle_action_review.jpg" alt="肌肉动作回顾" class="img-fluid rounded shadow mb-3">
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <ul>
+                                                                <li>肌肉动作类型：向心、离心、等长</li>
+                                                                <li>动态与静态运动</li>
+                                                                <li>肌肉力量调节的三个因素</li>
+                                                                <li>力量-速度/功率-速度关系</li>
+                                                                <li>骨骼肌知识在运动训练中的应用</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h3 class="mt-4">关键概念总结</h3>
+                                    <p>骨骼肌的结构与功能是一个复杂而精密的系统，以下是本课程中的几个核心概念：</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-10 offset-md-1 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/key_concepts.jpg" alt="关键概念图" class="img-fluid rounded shadow" style="max-height: 350px;">
+                                                <p class="text-muted mt-2">图9.2：骨骼肌结构与功能的关键概念关系图</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card mb-3">
+                                        <div class="card-body">
+                                            <h4 class="card-title">结构决定功能</h4>
+                                            <p class="card-text">骨骼肌的微观结构（肌原纤维、肌节、肌丝蛋白排列）直接决定了其功能特性。不同类型的肌纤维具有不同的结构特点，因此具有不同的功能属性。</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card mb-3">
+                                        <div class="card-body">
+                                            <h4 class="card-title">神经控制的重要性</h4>
+                                            <p class="card-text">肌肉收缩完全依赖于神经系统的控制。神经系统通过调节激活的运动单位数量和发放频率来精确控制肌肉产生的力量。</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card mb-3">
+                                        <div class="card-body">
+                                            <h4 class="card-title">能量供应与肌肉功能</h4>
+                                            <p class="card-text">肌肉收缩是一个需要能量的过程，不同类型的肌纤维依赖不同的能量系统，这决定了它们在不同类型运动中的表现。</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card mb-3">
+                                        <div class="card-body">
+                                            <h4 class="card-title">适应性与可塑性</h4>
+                                            <p class="card-text">骨骼肌具有显著的适应性，可以根据训练刺激改变其结构和功能特性。这种可塑性是运动训练能够提高表现的基础。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-primary text-white">
+                                            <h4 class="mb-0">学习成果检查</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center mb-3">
+                                                <img src="images/learning_outcomes.jpg" alt="学习成果" class="img-fluid rounded shadow" style="max-height: 200px;">
+                                            </div>
+                                            <p>完成本课程后，您应该能够：</p>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item d-flex align-items-center">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    描述骨骼肌的微观结构
+                                                </li>
+                                                <li class="list-group-item d-flex align-items-center">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    解释神经肌肉连接的工作原理
+                                                </li>
+                                                <li class="list-group-item d-flex align-items-center">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    说明肌肉收缩的分子机制
+                                                </li>
+                                                <li class="list-group-item d-flex align-items-center">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    区分不同类型的肌纤维及其特性
+                                                </li>
+                                                <li class="list-group-item d-flex align-items-center">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    分析不同类型的肌肉动作
+                                                </li>
+                                                <li class="list-group-item d-flex align-items-center">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    解释肌肉力量调节的机制
+                                                </li>
+                                                <li class="list-group-item d-flex align-items-center">
+                                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                                    应用骨骼肌知识设计训练方案
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">进一步学习资源</h4>
+                                            <div class="text-center mb-3">
+                                                <img src="images/further_resources.jpg" alt="进一步学习资源" class="img-fluid rounded shadow" style="max-height: 150px;">
+                                            </div>
+                                            <p>如果您想深入了解骨骼肌的结构与功能，以下资源可能对您有所帮助：</p>
+                                            <ul>
+                                                <li><strong>教材</strong>：《Exercise Physiology: Theory and Application to Fitness and Performance》</li>
+                                                <li><strong>学术期刊</strong>：Journal of Applied Physiology, Medicine & Science in Sports & Exercise</li>
+                                                <li><strong>在线资源</strong>：American College of Sports Medicine (ACSM) 网站</li>
+                                                <li><strong>进阶课程</strong>：肌肉生物力学、运动训练学、运动康复学</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <h3>综合测验</h3>
+                                    <p>完成以下测验，检验您对骨骼肌结构与功能的理解。这个测验涵盖了课程中的所有主要内容。</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2 mb-4">
+                                            <div class="text-center">
+                                                <img src="images/comprehensive_quiz.jpg" alt="综合测验" class="img-fluid rounded shadow" style="max-height: 300px;">
+                                                <p class="text-muted mt-2">图9.3：骨骼肌结构与功能综合测验</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div id="comprehensive-quiz">
+                                                <p class="text-center">综合测验将在交互式元素实现后添加。测验将包括多选题、匹配题和图像标记题，全面检验您对课程内容的掌握情况。</p>
+                                                <div class="text-center">
+                                                    <i class="fas fa-tasks fa-5x text-primary mb-3"></i>
+                                                    <p class="text-muted">综合测验（将在后续开发中实现）</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-4">
+                                        <h3>课程反馈</h3>
+                                        <p>您的反馈对我们改进课程非常重要。请花几分钟时间完成以下反馈表单。</p>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6 offset-md-3 mb-4">
+                                                <div class="text-center">
+                                                    <img src="images/feedback.jpg" alt="课程反馈" class="img-fluid rounded shadow" style="max-height: 250px;">
+                                                    <p class="text-muted mt-2">图9.4：您的反馈有助于我们不断改进课程</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <form id="feedback-form">
+                                                    <div class="mb-3">
+                                                        <label for="content-rating" class="form-label">课程内容质量</label>
+                                                        <select class="form-select" id="content-rating">
+                                                            <option selected disabled>请选择评分</option>
+                                                            <option value="5">5 - 优秀</option>
+                                                            <option value="4">4 - 良好</option>
+                                                            <option value="3">3 - 一般</option>
+                                                            <option value="2">2 - 较差</option>
+                                                            <option value="1">1 - 很差</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="interactive-rating" class="form-label">交互元素有效性</label>
+                                                        <select class="form-select" id="interactive-rating">
+                                                            <option selected disabled>请选择评分</option>
+                                                            <option value="5">5 - 优秀</option>
+                                                            <option value="4">4 - 良好</option>
+                                                            <option value="3">3 - 一般</option>
+                                                            <option value="2">2 - 较差</option>
+                                                            <option value="1">1 - 很差</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="feedback-text" class="form-label">您的建议和意见</label>
+                                                        <textarea class="form-control" id="feedback-text" rows="3" placeholder="请分享您对课程的建议和意见..."></textarea>
+                                                    </div>
+                                                    <button type="button" class="btn btn-primary" id="submit-feedback">提交反馈</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="text-center mt-4">
+                                            <button class="btn btn-primary btn-sm module-nav-btn" data-target="module1">返回课程开始 <i class="fas fa-redo"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 互动练习区 -->
+                <section id="interactive" class="py-5 bg-info bg-opacity-10">
+                    <div class="container">
+                        <h2 class="text-center mb-4">互动练习</h2>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-title">知识测验</h3>
+                                        <p class="card-text">测试您对骨骼肌结构与功能的理解。</p>
+                                        <button class="btn btn-primary" id="startQuiz">开始测验</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-title">肌肉收缩模拟</h3>
+                                        <p class="card-text">交互式模拟肌肉收缩过程。</p>
+                                        <button class="btn btn-primary" id="startContraction">开始模拟</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 多媒体展示 -->
+                <section id="multimedia" class="py-5 bg-light">
+                    <div class="container">
+                        <h2 class="text-center mb-4">多媒体互动展示</h2>
+                        
+                        <!-- 3D肌肉纤维模型 -->
+                        <div class="row mb-5">
+                            <div class="col-lg-12">
+                                <div class="card shadow">
+                                    <div class="card-header bg-primary text-white">
+                                        <h3 class="mb-0">骨骼肌结构3D模型</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="3d-muscle-model" style="height: 500px;"></div>
+                                        <div class="mt-3">
+                                            <p class="text-muted">使用鼠标拖动可旋转模型，滚轮可缩放。点击按钮可查看不同状态下的肌节结构。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 肌肉收缩过程动画 -->
+                        <div class="row mb-5">
+                            <div class="col-lg-12">
+                                <div class="card shadow">
+                                    <div class="card-header bg-primary text-white">
+                                        <h3 class="mb-0">肌肉收缩过程动画</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="muscle-contraction-animation"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 肌纤维类型比较图表 -->
+                        <div class="row mb-5">
+                            <div class="col-lg-12">
+                                <div class="card shadow">
+                                    <div class="card-header bg-primary text-white">
+                                        <h3 class="mb-0">肌纤维类型比较</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="fiber-type-chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 肌肉疲劳模拟图表 -->
+                        <div class="row mb-5">
+                            <div class="col-lg-12">
+                                <div class="card shadow">
+                                    <div class="card-header bg-primary text-white">
+                                        <h3 class="mb-0">肌肉疲劳模拟</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="muscle-fatigue-chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 肌肉收缩力量-速度关系图表 -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card shadow">
+                                    <div class="card-header bg-primary text-white">
+                                        <h3 class="mb-0">肌肉收缩力量-速度关系</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="force-velocity-chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 学习资源 -->
+                <section id="resources" class="py-5">
+                    <div class="container">
+                        <h2 class="text-center mb-4">学习资源</h2>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-title">参考文献</h3>
+                                        <p class="card-text">课程使用的主要参考资料。</p>
+                                        <p><strong>主要教材：</strong> Exercise Physiology, 12E Theory an Application to Fitness and Performance</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-title">扩展阅读</h3>
+                                        <p class="card-text">深入了解骨骼肌的额外资源。</p>
+                                        <p>推荐阅读列表将在这里提供。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-title">下载资料</h3>
+                                        <p class="card-text">课程相关的可下载资源。</p>
+                                        <button class="btn btn-outline-primary" disabled>即将推出</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>骨骼肌：结构与功能</h5>
+                    <p>基于《Exercise Physiology, 12E Theory an Application to Fitness and Performance》教材第8章内容开发</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2025 运动生理学课程</p>
+                    <p>本课程仅用于教育目的</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4" style="display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- 自定义JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/interactive.js"></script>
+    <script src="js/multimedia.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
